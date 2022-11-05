@@ -1,18 +1,11 @@
 {
-  "name": "starter-slack-boltjs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "dev": "env-cmd node app.js",
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "build": {
+    "builder": "DOCKERFILE",
+    "dockerfilePath": "Dockerfile"
   },
-  "keywords": [],
-  "author": "Kam Lasater <kam.lasater@cyclic.sh>",
-  "license": "ISC",
-  "dependencies": {
-    "@slack/bolt": "^3.10.0",
-    "env-cmd": "^10.1.0"
+  "deploy": {
+    "startCommand": "python3 -m VIVI",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 10
   }
 }
